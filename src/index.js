@@ -10,7 +10,7 @@ const rutas = require("./rutas/rutas");
 const cuentas_canales = require("./cuentas_canales");
 
 // puerto a usar
-app.set("puerto", 3000);
+app.set("puerto", 5000);
 
 // ventanas html
 app.set("views", path.join(__dirname, "ventanas"));
