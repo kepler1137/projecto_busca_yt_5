@@ -22,24 +22,24 @@ app.listen(app.get("puerto"), async () => {
     // LIMPIESA DE LOS ALAMCENADORES JSON
     var array_limpio = [];
     var string_limpio = JSON.stringify(array_limpio);
-    fs.writeFileSync("src/contador.json", string_limpio, "utf-8");
-    fs.writeFileSync("src/errores.json", string_limpio, "utf-8");
-    fs.writeFileSync("src/ubicada.json", string_limpio, "utf-8");
+    fs.writeFileSync("projecto_busca_yt_5/src/contador.json", string_limpio, "utf-8");
+    fs.writeFileSync("projecto_busca_yt_5/src/errores.json", string_limpio, "utf-8");
+    fs.writeFileSync("projecto_busca_yt_5/src/ubicada.json", string_limpio, "utf-8");
     //--------------------------------------------------------
 
-    var erroresjson = fs.readFileSync("src/errores.json", "utf-8");
+    var erroresjson = fs.readFileSync("projecto_busca_yt_5/src/errores.json", "utf-8");
     var errores_json = JSON.parse(erroresjson);
     // ------- Para verificación -------
     console.log("EL ERORRRR");
     console.log(errores_json);
 
-    var ubicadajson = fs.readFileSync("src/ubicada.json", "utf-8");
+    var ubicadajson = fs.readFileSync("projecto_busca_yt_5/src/ubicada.json", "utf-8");
     var ubicada_json = JSON.parse(ubicadajson);
     // ------- Para verificación -------
     console.log("EL UBICADO");
     console.log(ubicada_json);
 
-    var contadorjson = fs.readFileSync("src/contador.json", "utf-8");
+    var contadorjson = fs.readFileSync("projecto_busca_yt_5/src/contador.json", "utf-8");
     var contador_json = JSON.parse(contadorjson);
     // ------- Para verificación -------
     console.log("EL CONTADOR");
@@ -206,7 +206,7 @@ app.listen(app.get("puerto"), async () => {
                                 contador;
                             array_contador[0] = info.toString();
                             var string_contador = JSON.stringify(array_contador);
-                            fs.writeFileSync("src/contador.json", string_contador, "utf-8");
+                            fs.writeFileSync("projecto_busca_yt_5/src/contador.json", string_contador, "utf-8");
 
                             console.log(info);
                             
@@ -265,7 +265,7 @@ app.listen(app.get("puerto"), async () => {
                                     // lo agregamos a la base de datos JSON ACTUALIZANDOLO CONTANTEMENTE, asi no tendremos que esperar que revise TODOS los chats para cuando una vez que termine recien nos muestre los resultados
 
                                     // leemos lo que actualmente esta escrito en el json
-                                    var json_inicial = fs.readFileSync("src/ubicada.json", "utf-8"); // json_inicial ESTARA EN STRING
+                                    var json_inicial = fs.readFileSync("projecto_busca_yt_5/src/ubicada.json", "utf-8"); // json_inicial ESTARA EN STRING
                                     var estados = JSON.parse(json_inicial); // estados ESTARA CONVERTIDO EN JSON
 
                                     // Agregamos el nuevo avistamiento de la mil putas
@@ -274,7 +274,7 @@ app.listen(app.get("puerto"), async () => {
                                     // aqui guardamos agregando en el json lo que encontro
                                     // lo que hace es que si el archivo no existe lo crea y escribe los datos sobre el y si el archivo existe, entonces lo que hace es escribir sobre el nuevamente.
                                     var json_actualizado = JSON.stringify(estados);
-                                    fs.writeFileSync("src/ubicada.json", json_actualizado, "utf-8");
+                                    fs.writeFileSync("projecto_busca_yt_5/src/ubicada.json", json_actualizado, "utf-8");
                                     await page.waitForTimeout(3000); // para esperar el cargado de la pagina
                                 }
                             }
@@ -305,7 +305,7 @@ app.listen(app.get("puerto"), async () => {
 
                             array_servidor[0] = info_err_a.toString();
                             var json_actualizado_err_a = JSON.stringify(array_servidor);
-                            fs.writeFileSync("src/errores.json", json_actualizado_err_a, "utf-8");
+                            fs.writeFileSync("projecto_busca_yt_5/src/errores.json", json_actualizado_err_a, "utf-8");
                         }
                     }
                 }
@@ -330,14 +330,14 @@ app.listen(app.get("puerto"), async () => {
 
             array_servidor[0] = info_err_b.toString();
             var json_actualizado_err_b = JSON.stringify(array_servidor);
-            fs.writeFileSync("src/errores.json", json_actualizado_err_b, "utf-8");
+            fs.writeFileSync("projecto_busca_yt_5/src/errores.json", json_actualizado_err_b, "utf-8");
         }
 
         var corrida = "CORRIDA NUMERO " + (cc + 1) + " de " + num_corridas;
 
         array_servidor[0] = corrida.toString();
         var estado_corrida_f = JSON.stringify(array_servidor);
-        fs.writeFileSync("src/errores.json", estado_corrida_f, "utf-8");
+        fs.writeFileSync("projecto_busca_yt_5/src/errores.json", estado_corrida_f, "utf-8");
     }
 });
 
